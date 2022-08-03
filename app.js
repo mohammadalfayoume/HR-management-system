@@ -26,25 +26,41 @@ const emp01= {
     department: "Administration",
     level: "Senior",
     // method to calculate the random salary between max and min values
-    randomSalary: function(min,max,randSal) {
+    netSalary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    // The random salary
-    salary : function() {
-        return this.randomSalary();
-    },
-    // Net salary after deduction 7.5% from random salary
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
+    // The random salary
+    // salary : function() {
+    //     return this.randomSalary();
+    // },
+    // // Net salary after deduction 7.5% from random salary
+    // netSalary: function() {
+    //     return (this.salary() - 0.075*this.salary())
+    // }
 };
+// console.log(emp01.salary())
 
 // print value and it will appear in the console
 console.log("Employee name: ", emp01.fullName);
-console.log("Employee salary: ", emp01.netSalary());
+console.log("Employee salary: ", emp01.netSalary());    
+
+// try
+// function randomSalary(min,max,randSal) {
+//     var min=1500;
+//     var max=2000;
+//     var randSal=Math.floor(Math.random() * (max - min)) + min;
+//     return randSal;
+// }
+
+// var salary = randomSalary();
+// console.log(salary)
+// var netSalary = salary - salary*0.075;
+// console.log(netSalary);
+// try
 
 // emp01.employeeId= a[0]
 // console.log(emp01.employeeId)
