@@ -1,7 +1,10 @@
 var id=999;
-var count=1;
 // This is a constructor contain all properties for employees
-function Employee(fullName,department,level,image) {
+function salary(min,max){
+    return ( Math.floor(Math.random() * (max - min)) + min) -(Math.floor(Math.random() * (max - min)) + min)*0.075;
+} 
+var allEmp=[]
+function Employee(fullName,department,level,image,salary) {
     this.employeeId=function(counter){
         counter=id
         id++
@@ -11,70 +14,19 @@ function Employee(fullName,department,level,image) {
     this.department=department;
     this.level=level;
     this.image=image;
-    this.salary=function(min,max,randSal,netSalary) {
-                
-                switch(count){
-                case 1:
-                var min=1500;
-                var max=2000;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                case 2:
-                var min=1500;
-                var max=2000;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                case 3:
-                var min=1500;
-                var max=2000;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break; 
-                case 4: 
-                var min=1000;
-                var max=1500;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                case 5:
-                var min=1500;
-                var max=2000;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                case 6: 
-                var min=500;
-                var max=1000;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                case 7: 
-                var min=1000;
-                var max=1500;
-                var randSal=Math.floor(Math.random() * (max - min)) + min;
-                var netSalary =(randSal - 0.075*randSal)
-                count++
-                break;
-                }
-                return netSalary;
-                }
-
+    this.salary= salary;
+    allEmp.push(this);
 }
+    
+                
 Employee.prototype.render=function(){
 
     document.write(`<p>Employee name: ${this.fullName}</p>`)
     document.write(`<p>Department: ${this.department}</p>`)
-    document.write(`<p>Employee salary: ${this.salary()}</p>`)
+    document.write(`<p>Employee salary: ${this.salary}</p>`)
     document.write(`<br>`)
 }
+
 
 
 
@@ -85,22 +37,26 @@ Employee.prototype.render=function(){
 //     }
 
 
-const employee_01 = new Employee("Ghazi Samer","Administration","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
-const employee_02 = new Employee("Lana Ali","Finance","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
-const employee_03 = new Employee("Tamara Ayoub","Marketing","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg" );
-const employee_04 = new Employee("Safi Walid","Administration","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
-const employee_05 = new Employee("Omar Zaid","Developmentn","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
-const employee_06 = new Employee("Rana Saleh","Developmentn","Junior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
-const employee_07 = new Employee("Hadi Ahmad","Finance","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg");
+const employee_01 = new Employee("Ghazi Samer","Administration","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
+const employee_02 = new Employee("Lana Ali","Finance","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
+const employee_03 = new Employee("Tamara Ayoub","Marketing","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000) );
+const employee_04 = new Employee("Safi Walid","Administration","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1000,1500));
+const employee_05 = new Employee("Omar Zaid","Developmentn","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
+const employee_06 = new Employee("Rana Saleh","Developmentn","Junior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(500,1000));
+const employee_07 = new Employee("Hadi Ahmad","Finance","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1000,1500));
 
 // Show all requirments in HTML page 
-employee_01.render();
-employee_02.render();
-employee_03.render();
-employee_04.render();
-employee_05.render();
-employee_06.render();
-employee_07.render();
+for(let i=0;i<allEmp.length;i++){
+    allEmp[i].render();
+}
+
+// employee_01.render();
+// employee_02.render();
+// employee_03.render();
+// employee_04.render();
+// employee_05.render();
+// employee_06.render();
+// employee_07.render();
 
 
 
@@ -261,4 +217,4 @@ employee_07.render();
 // };
 
 // console.log("Employee name: ", emp07.fullName);
-// console.log("Employee salary: ", emp07.salary());
+// console.log("Employee salary: ", emp07.salary())};
