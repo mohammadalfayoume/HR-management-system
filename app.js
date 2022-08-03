@@ -1,225 +1,159 @@
-// This function to get an array contains Employee-IDs 
-function empId() {
-    var arr=[];
-    var id=0;
-    for (let i=1000 ;i<1007 ; i++) {
-        arr[id]=i;
-        id++
-    }
-    return arr;
-}
-// This variable to invoke each ID from array
-var a= empId()
-// console.log(a);
+// global counter
+var id =999;
 
 //Employee-01
 const emp01= {
-    // This method created to get the first employee ID
-    empId: function() {
-        return a[0];
-    },
-    // This method contain the ID
-    employeeId:function(){
-        return this.empId();
+    // method to git unique ID for each employee
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Ghazi Samer",
     department: "Administration",
     level: "Senior",
-    // method to calculate the random salary between max and min values
-    randomSalary: function(min,max,randSal) {
+    // method to calculate the net salary after deduction the tax
+    salary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    // The random salary
-    salary : function() {
-        return this.randomSalary();
-    },
-    // Net salary after deduction 7.5% from random salary
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
-// print value and it will appear in the console
 console.log("Employee name: ", emp01.fullName);
-console.log("Employee salary: ", emp01.netSalary());
+console.log("Employee salary: ", emp01.salary());    
 
-// emp01.employeeId= a[0]
-// console.log(emp01.employeeId)
 
 //Employee-02
 const emp02= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Lana Ali",
     department: "Finance",
     level: "Senior",
-    randomSalary: function(min,max,randSal) {
+    salary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
-
 console.log("Employee name: ", emp02.fullName);
-console.log("Employee salary: ", emp02.netSalary());
+console.log("Employee salary: ", emp02.salary());
 
 //Employee-03
 const emp03= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Tamara Ayoub",
     department: "Marketing",
     level: "Senior",
-    randomSalary: function(min,max,randSal) {
+    salary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
 console.log("Employee name: ", emp03.fullName);
-console.log("Employee salary: ", emp03.netSalary());
+console.log("Employee salary: ", emp03.salary());
 
 
 //Employee-04
 const emp04= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Safi Walid",
     department: "Administration",
     level: "Mid-Senior",
-    randomSalary: function(min,max,randSal) {
+    salary: function(min,max,randSal,netSalary) {
         var min=1000;
         var max=1500;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
 console.log("Employee name: ", emp04.fullName);
-console.log("Employee salary: ", emp04.netSalary());
+console.log("Employee salary: ", emp04.salary());
 
 //Employee-05
 const emp05= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Omar Zaid",
     department: "Developmentn",
     level: "Senior",
-    randomSalary: function(min,max,randSal) {
+    salary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
 console.log("Employee name: ", emp05.fullName);
-console.log("Employee salary: ", emp05.netSalary());
+console.log("Employee salary: ", emp05.salary());
 
 //Employee-06
 const emp06= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Rana Saleh",
     department: "Developmentn",
     level: "Junior",
-    randomSalary: function(min,max,randSal) {
+    salary: function(min,max,randSal,netSalary) {
         var min=500;
         var max=1000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
 console.log("Employee name: ", emp06.fullName);
-console.log("Employee salary: ", emp06.netSalary());
+console.log("Employee salary: ", emp06.salary());
 
 //Employee-07
 const emp07= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Hadi Ahmad",
     department: "Finance",
     level: "Mid-Senior",
-    randomSalary: function(min,max,randSal) {
-        var min=1000;
-        var max=1500;
+    salary: function(min,max,randSal,netSalary) {
+        var min=500;
+        var max=1000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
-        return randSal;
-    },
-    salary : function() {
-        return this.randomSalary();
-    },
-
-    netSalary: function() {
-        return (this.salary() - 0.075*this.salary())
+        var netSalary =(randSal - 0.075*randSal)
+        return netSalary;
     }
 };
 
 console.log("Employee name: ", emp07.fullName);
-console.log("Employee salary: ", emp07.netSalary());
+console.log("Employee salary: ", emp07.salary());
