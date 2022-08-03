@@ -1,32 +1,39 @@
 // This function to get an array contains Employee-IDs 
-function empId() {
-    var arr=[];
-    var id=0;
-    for (let i=1000 ;i<1007 ; i++) {
-        arr[id]=i;
-        id++
-    }
-    return arr;
-}
+// function empId() {
+//     var arr=[];
+//     var id=0;
+//     for (let i=1000 ;i<1007 ; i++) {
+//         arr[id]=i;
+//         id++
+//     }
+//     return arr;
+// }
 // This variable to invoke each ID from array
-var a= empId()
+// var a= empId()
 // console.log(a);
+
+var id =999;
 
 //Employee-01
 const emp01= {
     // This method created to get the first employee ID
-    empId: function() {
-        return a[0];
-    },
+    // empId: function() {
+    //     return a[0];
+    // },
     // This method contain the ID
-    employeeId:function(){
-        return this.empId();
+    // employeeId:function(){
+    //     return this.empId();
+    // },
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Ghazi Samer",
     department: "Administration",
     level: "Senior",
     // method to calculate the random salary between max and min values
-    netSalary: function(min,max,randSal,netSalary) {
+    salary: function(min,max,randSal,netSalary) {
         var min=1500;
         var max=2000;
         var randSal=Math.floor(Math.random() * (max - min)) + min;
@@ -45,8 +52,9 @@ const emp01= {
 // console.log(emp01.salary())
 
 // print value and it will appear in the console
+console.log(emp01.employeeId())
 console.log("Employee name: ", emp01.fullName);
-console.log("Employee salary: ", emp01.netSalary());    
+console.log("Employee salary: ", emp01.salary());    
 
 // try
 // function randomSalary(min,max,randSal) {
@@ -67,11 +75,16 @@ console.log("Employee salary: ", emp01.netSalary());
 
 //Employee-02
 const emp02= {
-    empId: function() {
-        return a[0];
-    },
-    employeeId:function(){
-        return this.empId();
+    // empId: function() {
+    //     return a[0];
+    // },
+    // employeeId:function(){
+    //     return this.empId();
+    // },
+    employeeId: function(counter){
+        counter=id
+        id++
+        return counter;
     },
     fullName: "Lana Ali",
     department: "Finance",
@@ -90,7 +103,7 @@ const emp02= {
         return (this.salary() - 0.075*this.salary())
     }
 };
-
+console.log(emp02.employeeId())
 console.log("Employee name: ", emp02.fullName);
 console.log("Employee salary: ", emp02.netSalary());
 
