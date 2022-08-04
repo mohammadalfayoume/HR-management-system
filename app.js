@@ -1,36 +1,35 @@
-var id=999;
-function salary(min,max){
-    return ( Math.floor(Math.random() * (max - min)) + min) -(Math.floor(Math.random() * (max - min)) + min)*0.075;
-} 
-var allEmp=[]
+var id = 999;
+function salary(min, max) {
+  return (
+    Math.floor(Math.random() * (max - min)) +
+    min -
+    (Math.floor(Math.random() * (max - min)) + min) * 0.075
+  );
+}
+var allEmp = [];
 
 // This is a constructor contain all properties for employees
 
-function Employee(fullName,department,level,image,salary) {
-    this.employeeId=function(counter){
-        counter=id
-        id++
+function Employee(fullName, department, level, image, salary) {
+  this.employeeId = function (counter) {
+    counter = id;
+    id++;
     return counter;
-    };
-    this.fullName=fullName;
-    this.department=department;
-    this.level=level;
-    this.image=image;
-    this.salary= salary;
-    allEmp.push(this);
-}
-    
-                
-Employee.prototype.render=function(){
-
-    document.write(`<p>Employee name: ${this.fullName}</p>`)
-    document.write(`<p>Department: ${this.department}</p>`)
-    document.write(`<p>Employee salary: ${this.salary}</p>`)
-    document.write(`<br>`)
+  };
+  this.fullName = fullName;
+  this.department = department;
+  this.level = level;
+  this.image = image;
+  this.salary = salary;
+  allEmp.push(this);
 }
 
-
-
+Employee.prototype.render = function () {
+  document.write(`<p>Employee name: ${this.fullName}</p>`);
+  document.write(`<p>Department: ${this.department}</p>`);
+  document.write(`<p>Employee salary: ${this.salary}</p>`);
+  document.write(`<br>`);
+};
 
 // Employee.employeeId=function(counter){
 //     counter=id
@@ -38,18 +37,59 @@ Employee.prototype.render=function(){
 //     return counter;
 //     }
 
+const employee_01 = new Employee(
+  "Ghazi Samer",
+  "Administration",
+  "Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1500, 2000)
+);
+const employee_02 = new Employee(
+  "Lana Ali",
+  "Finance",
+  "Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1500, 2000)
+);
+const employee_03 = new Employee(
+  "Tamara Ayoub",
+  "Marketing",
+  "Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1500, 2000)
+);
+const employee_04 = new Employee(
+  "Safi Walid",
+  "Administration",
+  "Mid-Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1000, 1500)
+);
+const employee_05 = new Employee(
+  "Omar Zaid",
+  "Developmentn",
+  "Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1500, 2000)
+);
+const employee_06 = new Employee(
+  "Rana Saleh",
+  "Developmentn",
+  "Junior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(500, 1000)
+);
+const employee_07 = new Employee(
+  "Hadi Ahmad",
+  "Finance",
+  "Mid-Senior",
+  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  salary(1000, 1500)
+);
 
-const employee_01 = new Employee("Ghazi Samer","Administration","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
-const employee_02 = new Employee("Lana Ali","Finance","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
-const employee_03 = new Employee("Tamara Ayoub","Marketing","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000) );
-const employee_04 = new Employee("Safi Walid","Administration","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1000,1500));
-const employee_05 = new Employee("Omar Zaid","Developmentn","Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1500,2000));
-const employee_06 = new Employee("Rana Saleh","Developmentn","Junior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(500,1000));
-const employee_07 = new Employee("Hadi Ahmad","Finance","Mid-Senior","https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",salary(1000,1500));
-
-// Show all requirments in HTML page 
-for(let i=0;i<allEmp.length;i++){
-    allEmp[i].render();
+// Show all requirments in HTML page
+for (let i = 0; i < allEmp.length; i++) {
+  allEmp[i].render();
 }
 
 // employee_01.render();
@@ -59,10 +99,6 @@ for(let i=0;i<allEmp.length;i++){
 // employee_05.render();
 // employee_06.render();
 // employee_07.render();
-
-
-
-
 
 // //Employee-01
 // const emp01= {
@@ -86,8 +122,7 @@ for(let i=0;i<allEmp.length;i++){
 // };
 
 // console.log("Employee name: ", emp01.fullName);
-// console.log("Employee salary: ", emp01.salary());    
-
+// console.log("Employee salary: ", emp01.salary());
 
 // //Employee-02
 // const emp02= {
@@ -131,7 +166,6 @@ for(let i=0;i<allEmp.length;i++){
 
 // console.log("Employee name: ", emp03.fullName);
 // console.log("Employee salary: ", emp03.salary());
-
 
 // //Employee-04
 // const emp04= {
