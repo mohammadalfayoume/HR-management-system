@@ -1,9 +1,11 @@
 var id=999;
-// This is a constructor contain all properties for employees
 function salary(min,max){
     return ( Math.floor(Math.random() * (max - min)) + min) -(Math.floor(Math.random() * (max - min)) + min)*0.075;
 } 
 var allEmp=[]
+
+// This is a constructor contain all properties for employees
+
 function Employee(fullName,department,level,image,salary) {
     this.employeeId=function(counter){
         counter=id
