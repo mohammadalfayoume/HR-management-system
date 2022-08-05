@@ -1,4 +1,39 @@
-var id = 999;
+'use strict';
+var allEmp = [];
+// var employee=[];
+var id = 1000;
+// var i;
+
+
+
+
+
+// for (let i=0;i<7;i++){
+// employee[i]=document.createElement("div");
+// employee[i].className=("container");
+// }
+// console.log(employee);
+
+
+
+// const container =document.createElement("div");
+// console.log(container)
+// container.className=("container");
+
+// const container =document.getElementsByClassName("container")
+// const picture =document.getElementById("pic")
+// const nameAndId =document.getElementById("nameAndId")
+// const depAndLvl =document.getElementById("depAndLvl")
+// const netSalary =document.getElementById("salary")
+// const body = document.getElementsByTagName("body");
+// const employee01= document.getElementById("employee-01");
+// const employee02= document.getElementById("employee-02");
+// const employee03= document.getElementById("employee-03");
+// const employee04= document.getElementById("employee-04");
+// const employee05= document.getElementById("employee-05");
+// const employee06= document.getElementById("employee-06");
+// const employee07= document.getElementById("employee-07");
+
 function salary(min, max) {
   return (
     Math.floor(Math.random() * (max - min)) +
@@ -6,7 +41,6 @@ function salary(min, max) {
     (Math.floor(Math.random() * (max - min)) + min) * 0.075
   );
 }
-var allEmp = [];
 
 // This is a constructor contain all properties for employees
 
@@ -25,10 +59,79 @@ function Employee(fullName, department, level, image, salary) {
 }
 
 Employee.prototype.render = function () {
-  document.write(`<p>Employee name: ${this.fullName}</p>`);
-  document.write(`<p>Department: ${this.department}</p>`);
-  document.write(`<p>Employee salary: ${this.salary}</p>`);
-  document.write(`<br>`);
+
+//Container contains all element
+const employee =document.createElement("div");
+employee.className=("container");
+console.log(employee);
+
+//image element contain image of employee
+const pE0 = document.createElement("img");
+pE0.src=this.image;
+employee.appendChild(pE0);
+
+//paragraph element contain name and id of employee
+const pEl = document.createElement("p");
+pEl.className=("p1");
+pEl.textContent=`Name: ${this.fullName} - ID: ${this.employeeId()}`;
+employee.appendChild(pEl);
+
+//paragraph element contain department and level of employee
+const pE2 = document.createElement("p");
+pE2.className=("p2");
+pE2.textContent= `Department: ${this.department} - Level: ${this.level}`;
+employee.appendChild(pE2)
+
+//paragraph element contain salary of employee
+const pE3 = document.createElement("p");
+pE3.className=("p3");
+pE3.textContent= `${this.salary}`;
+employee.appendChild(pE3);
+
+// to show element in the page
+document.body.appendChild(employee)
+
+// to size images
+pE0.style.width='20%'
+
+
+//background color for each employee
+employee.style.backgroundColor='#008000a6'
+
+// employee.style.width='400px'
+employee.style.display='flex'
+
+// employee.querySelector("p").appendChild(pEl)
+    // employee[i]=document.createElement("div");
+    // employee[i].className=("container");
+    
+  
+  // const pE0 = document.createElement("img")
+  // pE0.src=this.image;
+  // employee[i].appendChild(pE0);
+  // document.body.appendChild(pE0)
+
+  // const pEl = document.createElement("p");
+  // pEl.textContent=`Name: ${this.fullName} - ID: ${this.employeeId()}`;
+  
+  // employee[i].appendChild(pE1);
+  // document.body.appendChild(pE1)
+  // body[0].appendChild(pEl);
+
+  // const pE2 = document.createElement("p");
+  // pE2.textContent= `Department: ${this.department} - Level: ${this.level}`;
+  // body[0].appendChild(pE2);
+
+  // const pE3 = document.createElement("p");
+  // pE3.textContent= `${this.salary}`
+  // body[0].appendChild(pE3);
+
+  
+  // document.write(`<p>Employee name: ${this.fullName}</p>`);
+  // document.write(`<p>Department: ${this.department}</p>`);
+  // document.write(`<p>Employee salary: ${this.salary}</p>`);
+  // document.write(`<img src=${this.image} alt=${this.fullName}>`);
+  // document.write(`<br>`);
 };
 
 // Employee.employeeId=function(counter){
@@ -41,54 +144,54 @@ const employee_01 = new Employee(
   "Ghazi Samer",
   "Administration",
   "Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Ghazi.jpg",
   salary(1500, 2000)
 );
 const employee_02 = new Employee(
   "Lana Ali",
   "Finance",
   "Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Lana.jpg",
   salary(1500, 2000)
 );
 const employee_03 = new Employee(
   "Tamara Ayoub",
   "Marketing",
   "Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Tamara.jpg",
   salary(1500, 2000)
 );
 const employee_04 = new Employee(
   "Safi Walid",
   "Administration",
   "Mid-Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Safi.jpg",
   salary(1000, 1500)
 );
 const employee_05 = new Employee(
   "Omar Zaid",
   "Developmentn",
   "Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Omar.jpg",
   salary(1500, 2000)
 );
 const employee_06 = new Employee(
   "Rana Saleh",
   "Developmentn",
   "Junior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Rana.jpg",
   salary(500, 1000)
 );
 const employee_07 = new Employee(
   "Hadi Ahmad",
   "Finance",
   "Mid-Senior",
-  "https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-10-1.jpeg",
+  "./assets/Hadi.jpg",
   salary(1000, 1500)
 );
 
 // Show all requirments in HTML page
-for (let i = 0; i < allEmp.length; i++) {
+for (var i = 0; i < allEmp.length; i++) {
   allEmp[i].render();
 }
 
