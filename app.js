@@ -4,6 +4,9 @@ var allEmp = [];
 var id = 1000;
 // var i;
 
+const body = document.getElementsByTagName("body");
+const main = document.createElement("main");
+main.className=("main");
 
 
 
@@ -60,15 +63,27 @@ function Employee(fullName, department, level, image, salary) {
 
 Employee.prototype.render = function () {
 
-//Container contains all element
+
+
 const employee =document.createElement("div");
 employee.className=("container");
-console.log(employee);
+body[0].appendChild(main);
+main.appendChild(employee);
+// employee.appendChild(main);
+// console.log(main)
+
+//Container contains all element
+// const employee =document.createElement("div");
+// employee.className=("container");
+// body[0].appendChild(employee);
+// console.log(employee);
 
 //image element contain image of employee
 const pE0 = document.createElement("img");
 pE0.src=this.image;
 employee.appendChild(pE0);
+// main.appendChild(employee);
+
 
 //paragraph element contain name and id of employee
 const pEl = document.createElement("p");
@@ -89,7 +104,7 @@ pE3.textContent= `${this.salary}`;
 employee.appendChild(pE3);
 
 // to show element in the page
-document.body.appendChild(employee)
+document.body.appendChild(main)
 
 // to size images
 pE0.style.width='20%'
@@ -98,8 +113,11 @@ pE0.style.width='20%'
 //background color for each employee
 employee.style.backgroundColor='#008000a6'
 
-// employee.style.width='400px'
-employee.style.display='flex'
+// main.style.whiteSpace='break-spaces'
+// main.style.display='flex'
+// main.style.justifyContent='normal'
+// main.style.flexWrap='wrap'
+
 
 // employee.querySelector("p").appendChild(pEl)
     // employee[i]=document.createElement("div");
