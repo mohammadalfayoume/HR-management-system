@@ -1,14 +1,11 @@
-/* img {
-    width: 250px;
-}
 
-#row {
+.row {
     display: flex;
     justify-content: space-between;
     padding: 50px;
 }
 
-#container {
+.container {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -16,6 +13,12 @@
 
 
 
-/* #emp {
-background-color: green ;
-} */ 
+ .emp {
+background: green ;
+display: flex;
+flex-direction: column;
+gap: 15px;
+padding: 30px;
+text-align: center;
+}  
+
