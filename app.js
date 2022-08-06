@@ -77,10 +77,10 @@ const employee_07 = new Employee(
   salary(1000, 1500)
 );
 
-var container =document.createElement('div');
+let container =document.createElement('div');
 container.className='container';
 
-var main=document.getElementsByTagName('main')
+let main=document.getElementsByTagName('main')
 main[0].appendChild(container);
 
 container.className='container'
@@ -89,7 +89,7 @@ let numOfEmployees =7;
 let numOfEmployeeInEachRow =3;
 let numberOfRows=Math.ceil(numOfEmployees/numOfEmployeeInEachRow)
 
-var rows=[];
+let rows=[];
 
 for (let i=0; i<numberOfRows ;i++){
 
