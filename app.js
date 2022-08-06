@@ -1,41 +1,84 @@
 'use strict';
 var allEmp = [];
-// var employee=[];
 var id = 1000;
-// var i;
-
-const body = document.getElementsByTagName("body");
-const main = document.createElement("main");
-main.className=("main");
 
 
+var container =document.createElement('div');
+container.className='container';
 
+var body=document.getElementsByTagName('body')
+body[0].appendChild(container);
 
-// for (let i=0;i<7;i++){
-// employee[i]=document.createElement("div");
-// employee[i].className=("container");
+// var container =document.createElement('div');
+// container.className='container';
+
+// var body=document.getElementsByTagName('body')
+// body[0].appendChild(container);
+
+// let numOfEmployees =7;
+// let numOfEmployeeInEachRow =3;
+// let numberOfRows=Math.ceil(numOfEmployees/numOfEmployeeInEachRow)
+
+// var row=[];
+// var employee=[]
+// for (let i=0; i<numberOfRows ;i++){
+// row[i]=document.createElement('div');
+// row[i].className='row ' +(i+1)
+// container.appendChild(row[i]);
+
+// //Row style
+// row[i].style.display='flex'
+// row[i].style.justifyContent='space-between'
+// row[i].style.gap='50px'
+
+// for (let j=0; j<numOfEmployeeInEachRow;j++){
+
+//   if (row[i]==row[numberOfRows-1]){
+//     employee[j]= document.createElement('div');
+//     employee[j].className='employee '+(j+1);
+//     row[i].appendChild(employee[j]);
+//     // employee[j].style.backgroundColor='green'
+//     let picture=document.createElement('img')
+//     picture.style.width='250px';
+//     let paragraph_01= document.createElement('p')
+//     paragraph_01.className='p1';
+//     let paragraph_02= document.createElement('p')
+//     paragraph_02.className='p2';
+//     let paragraph_03= document.createElement('p')
+//     paragraph_03.className='p3';
+//     employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
+//     break;
+//   }
+
+//   employee[j]= document.createElement('div');
+//   employee[j].className='employee '+(j+1);
+//   row[i].appendChild(employee[j]);
+//   // employee[j].style.backgroundColor='green'
+//   let picture=document.createElement('img')
+//   picture.src=
+//   picture.style.width='250px';
+//   let paragraph_01= document.createElement('p')
+//   paragraph_01.className='p1';
+//   // paragraph_01.textContent=`ID: ${employee_01.employeeId}`
+//   let paragraph_02= document.createElement('p')
+//   paragraph_02.className='p2';
+//   let paragraph_03= document.createElement('p')
+//   paragraph_03.className='p3';
+
+//   employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
+  
 // }
-// console.log(employee);
+
+// }
+
+// container.style.display='flex';
+// container.style.flexDirection='column';
+// container.style.gap='50px';
 
 
 
-// const container =document.createElement("div");
-// console.log(container)
-// container.className=("container");
 
-// const container =document.getElementsByClassName("container")
-// const picture =document.getElementById("pic")
-// const nameAndId =document.getElementById("nameAndId")
-// const depAndLvl =document.getElementById("depAndLvl")
-// const netSalary =document.getElementById("salary")
-// const body = document.getElementsByTagName("body");
-// const employee01= document.getElementById("employee-01");
-// const employee02= document.getElementById("employee-02");
-// const employee03= document.getElementById("employee-03");
-// const employee04= document.getElementById("employee-04");
-// const employee05= document.getElementById("employee-05");
-// const employee06= document.getElementById("employee-06");
-// const employee07= document.getElementById("employee-07");
+
 
 function salary(min, max) {
   return (
@@ -46,7 +89,6 @@ function salary(min, max) {
 }
 
 // This is a constructor contain all properties for employees
-
 function Employee(fullName, department, level, image, salary) {
   this.employeeId = function (counter) {
     counter = id;
@@ -61,102 +103,79 @@ function Employee(fullName, department, level, image, salary) {
   allEmp.push(this);
 }
 
-Employee.prototype.render = function () {
+// var container =document.createElement('div');
+// container.className='container';
 
+// var body=document.getElementsByTagName('body')
+// body[0].appendChild(container);
 
+// let numOfEmployees =7;
+// let numOfEmployeeInEachRow =3;
+// let numberOfRows=Math.ceil(numOfEmployees/numOfEmployeeInEachRow)
 
-const employee =document.createElement("div");
-employee.className=("container");
-body[0].appendChild(main);
-main.appendChild(employee);
-// employee.appendChild(main);
-// console.log(main)
+// var row=[];
+// var employee=[]
+// for (let i=0; i<numberOfRows ;i++){
+// row[i]=document.createElement('div');
+// row[i].className='row ' +(i+1)
+// container.appendChild(row[i]);
 
-//Container contains all element
-// const employee =document.createElement("div");
-// employee.className=("container");
-// body[0].appendChild(employee);
-// console.log(employee);
+// //Row style
+// row[i].style.display='flex'
+// row[i].style.justifyContent='space-between'
+// row[i].style.gap='50px'
 
-//image element contain image of employee
-const pE0 = document.createElement("img");
-pE0.src=this.image;
-employee.appendChild(pE0);
-// main.appendChild(employee);
+// for (let j=0; j<numOfEmployeeInEachRow;j++){
 
+//   if (row[i]==row[numberOfRows-1]){
+//     employee[j]= document.createElement('div');
+//     employee[j].className='employee '+(j+1);
+//     row[i].appendChild(employee[j]);
+//     // employee[j].style.backgroundColor='green'
+//     let picture=document.createElement('img')
+//     picture.style.width='250px';
+//     let paragraph_01= document.createElement('p')
+//     paragraph_01.className='p1';
+//     let paragraph_02= document.createElement('p')
+//     paragraph_02.className='p2';
+//     let paragraph_03= document.createElement('p')
+//     paragraph_03.className='p3';
+//     employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
+//     break;
+//   }
 
-//paragraph element contain name and id of employee
-const pEl = document.createElement("p");
-pEl.className=("p1");
-pEl.textContent=`Name: ${this.fullName} - ID: ${this.employeeId()}`;
-employee.appendChild(pEl);
+//   employee[j]= document.createElement('div');
+//   employee[j].className='employee '+(j+1);
+//   row[i].appendChild(employee[j]);
+//   // employee[j].style.backgroundColor='green'
+//   let picture=document.createElement('img')
+//   picture.src=`${employee_01.image}`
+//   picture.src=`${employee_02.image}`
+//   picture.style.width='250px';
+//   let paragraph_01= document.createElement('p')
+//   paragraph_01.className='p1';
+//   // paragraph_01.textContent=`ID: ${employee_01.employeeId}`
+//   let paragraph_02= document.createElement('p')
+//   paragraph_02.className='p2';
+//   let paragraph_03= document.createElement('p')
+//   paragraph_03.className='p3';
 
-//paragraph element contain department and level of employee
-const pE2 = document.createElement("p");
-pE2.className=("p2");
-pE2.textContent= `Department: ${this.department} - Level: ${this.level}`;
-employee.appendChild(pE2)
-
-//paragraph element contain salary of employee
-const pE3 = document.createElement("p");
-pE3.className=("p3");
-pE3.textContent= `${this.salary}`;
-employee.appendChild(pE3);
-
-// to show element in the page
-document.body.appendChild(main)
-
-// to size images
-pE0.style.width='20%'
-
-
-//background color for each employee
-employee.style.backgroundColor='#008000a6'
-
-// main.style.whiteSpace='break-spaces'
-// main.style.display='flex'
-// main.style.justifyContent='normal'
-// main.style.flexWrap='wrap'
-
-
-// employee.querySelector("p").appendChild(pEl)
-    // employee[i]=document.createElement("div");
-    // employee[i].className=("container");
-    
+//   employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
   
-  // const pE0 = document.createElement("img")
-  // pE0.src=this.image;
-  // employee[i].appendChild(pE0);
-  // document.body.appendChild(pE0)
+// }
 
-  // const pEl = document.createElement("p");
-  // pEl.textContent=`Name: ${this.fullName} - ID: ${this.employeeId()}`;
-  
-  // employee[i].appendChild(pE1);
-  // document.body.appendChild(pE1)
-  // body[0].appendChild(pEl);
+// }
 
-  // const pE2 = document.createElement("p");
-  // pE2.textContent= `Department: ${this.department} - Level: ${this.level}`;
-  // body[0].appendChild(pE2);
+// container.style.display='flex';
+// container.style.flexDirection='column';
+// container.style.gap='50px';
 
-  // const pE3 = document.createElement("p");
-  // pE3.textContent= `${this.salary}`
-  // body[0].appendChild(pE3);
+// Employee.prototype.render = function () {
 
   
-  // document.write(`<p>Employee name: ${this.fullName}</p>`);
-  // document.write(`<p>Department: ${this.department}</p>`);
-  // document.write(`<p>Employee salary: ${this.salary}</p>`);
-  // document.write(`<img src=${this.image} alt=${this.fullName}>`);
-  // document.write(`<br>`);
-};
 
-// Employee.employeeId=function(counter){
-//     counter=id
-//     id++
-//     return counter;
-//     }
+// };
+
 
 const employee_01 = new Employee(
   "Ghazi Samer",
@@ -208,10 +227,142 @@ const employee_07 = new Employee(
   salary(1000, 1500)
 );
 
-// Show all requirments in HTML page
-for (var i = 0; i < allEmp.length; i++) {
-  allEmp[i].render();
+// var container =document.createElement('div');
+// container.className='container';
+
+// var body=document.getElementsByTagName('body')
+// body[0].appendChild(container);
+
+let numOfEmployees =7;
+let numOfEmployeeInEachRow =3;
+let numberOfRows=Math.ceil(numOfEmployees/numOfEmployeeInEachRow)
+
+var row=[];
+var employee=[]
+for (let i=0; i<numberOfRows ;i++){
+row[i]=document.createElement('div');
+row[i].className='row ' +(i+1)
+container.appendChild(row[i]);
+
+//Row style
+row[i].style.display='flex'
+row[i].style.justifyContent='space-between'
+row[i].style.gap='50px'
+
+for (let j=0; j<numOfEmployeeInEachRow;j++){
+
+  if (row[i]==row[numberOfRows-1]){
+    employee[j]= document.createElement('div');
+    employee[j].className='employee '+(j+1);
+    row[i].appendChild(employee[j]);
+    // employee[j].style.backgroundColor='green'
+    let picture=document.createElement('img')
+    picture.style.width='250px';
+    let paragraph_01= document.createElement('p')
+    paragraph_01.className='p1';
+    let paragraph_02= document.createElement('p')
+    paragraph_02.className='p2';
+    let paragraph_03= document.createElement('p')
+    paragraph_03.className='p3';
+    employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
+    break;
+  }
+
+  employee[j]= document.createElement('div');
+  employee[j].className='employee '+(j+1);
+  row[i].appendChild(employee[j]);
+  // employee[j].style.backgroundColor='green'
+  let picture=document.createElement('img')
+  picture.style.width='250px';
+  let paragraph_01= document.createElement('p')
+  paragraph_01.className='p1';
+  // paragraph_01.textContent=`ID: ${employee_01.employeeId}`
+  let paragraph_02= document.createElement('p')
+  paragraph_02.className='p2';
+  let paragraph_03= document.createElement('p')
+  paragraph_03.className='p3';
+
+  employee[j].append(picture,paragraph_01,paragraph_02,paragraph_03)
+
 }
+
+}
+
+container.style.display='flex';
+container.style.flexDirection='column';
+container.style.gap='50px';
+
+Employee.prototype.render = function () {
+
+  
+
+};
+
+
+// var row=[];
+// var employee=[]
+// for (let i=0; i<numberOfRows ;i++){
+// row[i]=document.createElement('div');
+// row[i].className='row ' +(i+1)
+// container.appendChild(row[i]);
+// row[i].style.display='flex'
+// row[i].style.justifyContent='space-between'
+// row[i].style.gap='50px'
+// for (let j=0; j<numOfEmployeeInEachRow;j++){
+//   if (row[i]==row[numOfEmployeeInEachRow-1]){
+//     employee[j]= document.createElement('div');
+//     employee[j].className='employee '+(j+1);
+//     row[i].appendChild(employee[j]);
+//     employee[j].style.backgroundColor='green'
+//     let picture=document.createElement('img')
+//     employee[j].appendChild(picture);
+//     picture.style.width='250px';
+//     let paragraph_01= document.createElement('p')
+//     paragraph_01.className='p1';
+//     paragraph_01.textContent=`Hello: ${employee[j].employeeId}`
+//     employee[j].appendChild(paragraph_01);
+//     let paragraph_02= document.createElement('p')
+//     paragraph_02.className='p2';
+//     employee[j].appendChild(paragraph_02);
+//     let paragraph_03= document.createElement('p')
+//     paragraph_03.className='p3';
+//     employee[j].appendChild(paragraph_03);
+//     break;
+//   }
+//   employee[j]= document.createElement('div');
+//   employee[j].className='employee '+(j+1);
+//   row[i].appendChild(employee[j]);
+//   employee[j].style.backgroundColor='green'
+//   let picture=document.createElement('img')
+//   employee[j].appendChild(picture);
+//   picture.style.width='250px';
+//   let paragraph_01= document.createElement('p')
+//   paragraph_01.className='p1';
+//   employee[j].appendChild(paragraph_01);
+//   let paragraph_02= document.createElement('p')
+//   paragraph_02.className='p2';
+//   employee[j].appendChild(paragraph_02);
+//   let paragraph_03= document.createElement('p')
+//   paragraph_03.className='p3';
+//   employee[j].appendChild(paragraph_03);
+  
+// }
+// }
+
+// container.style.display='flex';
+// container.style.flexDirection='column';
+// container.style.gap='50px';
+
+
+
+// console.log(container)
+
+
+
+// Show all requirments in HTML page
+// for (var i = 0; i < allEmp.length; i++) {
+//   allEmp[i].render();
+// }
 
 // employee_01.render();
 // employee_02.render();
