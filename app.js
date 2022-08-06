@@ -3,11 +3,6 @@ var allEmp = [];
 var id = 1000;
 
 
-
-
-
-
-
 function salary(min, max) {
   return (
     Math.floor(Math.random() * (max - min)) +
@@ -90,11 +85,6 @@ main[0].appendChild(container);
 
 container.className='container'
 
-// container.style.display='flex';
-// container.style.flexDirection='column';
-// container.style.gap='50px';
-
-
 let numOfEmployees =7;
 let numOfEmployeeInEachRow =3;
 let numberOfRows=Math.ceil(numOfEmployees/numOfEmployeeInEachRow)
@@ -113,8 +103,6 @@ for (let i = 0; i <rows.length; i++) {
   for (let j = 0; j <numOfEmployeeInEachRow; j++) {
     let card=document.createElement('div');
     card.className='emp'
-
-    
 
     let employee=allEmp[counter]
     if (employee==undefined){
@@ -139,37 +127,14 @@ for (let i = 0; i <rows.length; i++) {
     let p3=document.createElement('p')
     p3.textContent=sal
 
-
     card.append(picture,p1,p2,p3)
 
-
-    // if (employee==undefined){
-    //   break;
-    // }
     rows[i].appendChild(card);
 
   counter++
 
   }
 }
-//Row style
-// row[i].style.display='flex'
-// row[i].style.justifyContent='space-between'
-// row[i].style.gap='50px'
-
-//   for (let j=0; j<numOfEmployeeInEachRow;j++){
-
-//     employee[j]= document.createElement('div');
-//     employee[j].className='employee';
-//     row[i].appendChild(employee[j]);
-//     // employee[j].style.display='flex'
-
-//     if (row[i]==row[numberOfRows-1]){
-//       break;
-//     }
-//   }
-
-// }
 
 
 
