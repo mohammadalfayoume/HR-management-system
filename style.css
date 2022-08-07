@@ -1,0 +1,104 @@
+img {
+    width: 250px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.employee {
+    display: flex;
+    flex-direction: column;
+    background: #008000c7;
+    padding: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: #CCD6A6;
+    width: 100%; 
+    margin-top: -80px; 
+    margin-left: -8px;
+}
+
+nav {
+    font-size: 20px;
+    margin: 25px 25px;
+    
+}
+
+
+a {
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    margin: 80px -6px -20px;
+    background: #DFE8CC;
+}
+
+footer {
+    background: #F7EDDB;
+    padding: 0 0 0 15px;
+    margin: 20px -15px 0 -15px;
+    padding: 30px;
+    
+
+}
+
+.heading {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+/* 
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
+ .emp {
+background: #008000ad ;
+display: flex;
+flex-direction: column;
+gap: 15px;
+padding: 30px;
+text-align: center;
+}  
+ */
+
